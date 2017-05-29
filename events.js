@@ -8,6 +8,8 @@ function start () {
   // when you mouse over it.
   one()
   two()
+  three()
+  four()
 
 
   // Your turn! Create a new function called `two`, then call it from here.
@@ -23,6 +25,11 @@ function one () {
   // Finally, we add one to make the colour white again
   one.addEventListener('mouseleave', makeWhite)
 }
+function makeBlue (evt) {
+  evt.target.style.backgroundColor = 'blue'
+}
+
+
 
 function two () {
 
@@ -30,17 +37,40 @@ var two = document.getElementById('two')
 two.addEventListener('mouseenter', makeGreen)
 two.addEventListener('mouseleave', makeWhite)
  }
- 
+
 function makeGreen (evt) {
   evt.target.style.backgroundColor = 'green'
 }
 
+function three () {
 
-
-// Changes the background color of event's target
-function makeBlue (evt) {
-  evt.target.style.backgroundColor = 'blue'
+var three = document.getElementById('three')
+three.addEventListener('mouseenter', makeRed)
+three.addEventListener('mouseleave', makeWhite)
 }
+
+function makeRed (evt) {
+  evt.target.style.backgroundColor = 'red'
+}
+
+function four () {
+
+var four = document.getElementById('four')
+four.addEventListener('click', makePurple)
+//four.addEventListener('click', makeWhite)
+}
+
+function makePurple (evt) {
+// evt.target.style.backgroundColor = 'purple'
+if (this.style.backgroundColor === 'purple') {
+  this.style.backgroundColor = 'white';
+} else {
+  this.style.backgroundColor = 'purple'
+}
+}
+
+
+
 
 function makeWhite (evt) {
   evt.target.style.backgroundColor = 'white'
